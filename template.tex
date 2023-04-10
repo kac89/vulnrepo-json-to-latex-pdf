@@ -1,0 +1,71 @@
+
+\documentclass[12pt]{article}
+\author{&researcher;}
+\title{&report_name;}
+\date{\today}
+\usepackage[spaces,hyphens]{url}
+\usepackage{graphicx}
+\usepackage[a4paper, total={17cm,26cm}]{geometry}
+\begin{document}
+
+\maketitle
+
+&report_logo;
+Report ID: &report_id;
+
+Report Version: &report_version;
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Scope}
+
+test
+
+\section{Statistics and Risk}
+
+\begin{center}
+\begin{tabular}{||c c||}
+ \hline
+ Severity & Number \\ [0.5ex] 
+ \hline\hline
+ Critical & &critical_len; \\ 
+ \hline
+ High & &high_len; \\
+ \hline
+ Medium & &medium_len; \\
+ \hline
+ Low & &low_len; \\
+ \hline
+ Info & &info_len; \\
+ \hline
+ Total & &severity_total; \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
+The risk of application security vulnerabilities discovered during an assessment will be rated according to a custom-tailored version the OWASP Risk Rating Methodology. Risk severity is determined based on the estimated technical and business impact of the vulnerability, and on the estimated likelihood of the vulnerability being exploited:\\
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}\hline\hline
+   \multicolumn{5}{|c|}{Overall Risk Severity}\\\hline\hline
+      Impact & HIGH & Medium & High & Critical \\\cline{1-5}
+	       & MEDIUM & Low & Medium & High \\\cline{1-5}
+	       & LOW & Info & Low & Medium \\\cline{1-5}
+                &   & LOW & MEDIUM & HIGH \\\cline{1-5}
+   \multicolumn{5}{|c|}{Likelihood}\\\hline\hline
+\end{tabular}
+\end{center}
+
+Our Risk rating is based on this calculation: Risk = Likelihood * Impact.
+
+\section{Issues (&severity_total;)}
+
+&report_issues;
+
+\section{Researcher}
+
+&researcher;
+
+\end{document}
