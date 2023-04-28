@@ -47,6 +47,16 @@ def saveOutput(report_id, report_name, latex):
 def lenSeverity(severity: str, listobj):
     return str(len(list(filter(lambda z: z['severity'] == severity, listobj))))
 
+def prepchars(input):
+    input = input.replace("$", "\$")
+    input = input.replace("&", "\&")
+    input = input.replace("%", "\%")
+    input = input.replace("{", "\{")
+    input = input.replace("_", "\_")
+    input = input.replace("#", "\#")
+    input = input.replace("}", "\}")
+    input = input.replace("^", "")
+    return input
 
 if latex != "":
     for f_name in glob('input/*.json'):
@@ -106,12 +116,12 @@ if latex != "":
             
             des = ''.join(a['desc'])
             des = des.replace("_", "-")
-            des = des.replace("$", "")
+            des = prepchars(des)
             pocc = ''.join(a['poc'])
             pocc = pocc.replace("_", "-")
             pocc = pocc.replace("\n", "\\\\")
             pocc = pocc.replace("\r\n", "\\\\")
-            pocc = pocc.replace("$", "")
+            pocc = prepchars(pocc)
             ref1 = a['ref']
             try:
                 el = ref1.split('\n')
