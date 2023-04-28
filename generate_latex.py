@@ -139,7 +139,7 @@ if latex != "":
 \\textbf{Description:}\\\\
 """+str(des)+"""\\\\\\\\
 \\textbf{PoC:}\\\\
-"""+str(pocc)+"""\\\\\\\\
+\\seqsplit{"""+str(pocc)+"""}\\\\\\\\
 \\textbf{References:}\\\\
 """+str(reft)+"""\\\\\\\\
             """
