@@ -123,14 +123,19 @@ if latex != "":
             pocc = pocc.replace("\r\n", "\\\\")
             pocc = prepchars(pocc)
             ref1 = a['ref']
-            try:
-                el = ref1.split('\n')
-            except AttributeError:
-                el = ref1[0].split('\n')
-                pass
 
-            for refx in el:
-                reft = reft + "\\url{"+refx+"}\\\\"
+            if len(ref1) > 0:
+                try:
+                    el = ref1.split('\n')
+                except AttributeError:
+                    el = ref1[0].split('\n')
+                    pass
+
+                for refx in el:
+                    if refx != '':
+                        reft = reft + "\\url{"+refx+"}\\\\"
+            else:
+                reft = ""
 
             issues = issues + """
 \subsection{"""+a['title']+"""}
